@@ -1,18 +1,17 @@
-  {
-    "name": "tomato two",
-    "version": "1.0",
-    "description": "a pomodoro timer for pair programming",
-    "manifest_version": 2,
-    "author": "Erik Cox and Ryan Trontz", 
+{
+  "name": "tomato two",
+  "version": "1.0",
+  "description": "a pomodoro timer for pair programming",
+  "manifest_version": 2,
+  "author": "Erik Cox and Ryan Trontz",
 
-    "browser_action": {
-      "default_title": "PomodoroPairs",
-      "default_popup": "popup.html"
-    },
+  "browser_action": {
+    "default_title": "PomodoroPairs",
+    "default_popup": "timer.html"
+  },
 
-    "chrome_url_overrides": {
-      "newtab": "newtab.html"
-    },
-    "permissions": ["activeTab"]
-
-  }
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": ["activeTab"]
+}
