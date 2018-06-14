@@ -12,16 +12,19 @@ function update(value, timePercent) {
   pointer.style.transform = `rotate(${(360 * value) / timePercent}deg)`;
 }
 
-//circle ends
+// circle ends
 const displayOutput = document.querySelector(".display-remain-time");
 const pauseBtn = document.getElementById("pause");
 const setterBtns = document.querySelectorAll("button[data-setter]");
 
 let intervalTimer;
 let timeLeft;
-let wholeTime = 0.5 * 60; // manage this to set the whole time
+let wholeTime = 25 * 60; // manage this to set the whole time
 let isPaused = false;
 let isStarted = false;
+
+localStorage.setItem("timerDuration", wholeTime);
+console.log(localStorage.getItem("timerDuration"));
 
 update(wholeTime, wholeTime); //refreshes progress bar
 displayTimeLeft(wholeTime);
@@ -33,26 +36,26 @@ function changeWholeTime(seconds) {
   }
 }
 
-for (var i = 0; i < setterBtns.length; i++) {
-  setterBtns[i].addEventListener("click", function(event) {
-    var param = this.dataset.setter;
-    switch (param) {
-      case "minutes-plus":
-        changeWholeTime(1 * 60);
-        break;
-      case "minutes-minus":
-        changeWholeTime(-1 * 60);
-        break;
-      case "seconds-plus":
-        changeWholeTime(1);
-        break;
-      case "seconds-minus":
-        changeWholeTime(-1);
-        break;
-    }
-    displayTimeLeft(wholeTime);
-  });
-}
+// for (var i = 0; i < setterBtns.length; i++) {
+//   setterBtns[i].addEventListener("click", function(event) {
+//     var param = this.dataset.setter;
+//     switch (param) {
+//       case "minutes-plus":
+//         changeWholeTime(1 * 60);
+//         break;
+//       case "minutes-minus":
+//         changeWholeTime(-1 * 60);
+//         break;
+//       case "seconds-plus":
+//         changeWholeTime(1);
+//         break;
+//       case "seconds-minus":
+//         changeWholeTime(-1);
+//         break;
+//     }
+//     displayTimeLeft(wholeTime);
+//   });
+// }
 
 function timer(seconds) {
   //counts time, takes seconds

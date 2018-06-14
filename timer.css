@@ -1,5 +1,6 @@
+/* Styling for page */
+
 body {
-  /* Styling for page */
   height: 550px;
   width: 600px;
 }
@@ -7,39 +8,8 @@ body {
 /* Styling for timer */
 
 #timer {
-  /* Something goes here */
-}
-
-button[data-setter] {
-  outline: none;
-  background: transparent;
-  border: none;
-  font-family: "Roboto";
-  font-weight: 300;
-  font-size: 18px;
-  width: 25px;
-  height: 30px;
-  color: #f7958e;
-  cursor: pointer;
-}
-
-button[data-setter]:hover {
-  opacity: 0.5;
-}
-
-.setters {
-  position: absolute;
-  left: 85px;
-  top: 75px;
-}
-
-.minutes-set {
-  float: left;
-  margin-right: 28px;
-}
-
-.seconds-set {
-  float: right;
+  position: relative;
+  left: 140px;
 }
 
 .controlls {
@@ -50,9 +20,9 @@ button[data-setter]:hover {
 }
 
 .display-remain-time {
-  font-family: "Roboto";
+  font-family: "Courier";
   font-weight: 100;
-  font-size: 65px;
+  font-size: 58px;
   color: #f7958e;
 }
 
@@ -116,4 +86,16 @@ button[data-setter]:hover {
 
 #e-pointer {
   transition: transform 0.7s;
+}
+
+#buttons {
+  font-family: "Courier";
+  position: relative;
+  left: 250px;
+  text-decoration: none;
+}
+
+#buttons>a {
+  text-decoration: none;
+  color: #f7958e;
 }
