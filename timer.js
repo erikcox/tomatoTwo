@@ -19,7 +19,7 @@ const setterBtns = document.querySelectorAll("button[data-setter]");
 
 let intervalTimer;
 let timeLeft;
-let wholeTime = 25 * 60; // manage this to set the whole time
+let wholeTime = 0.1 * 60; // manage this to set the whole time
 let isPaused = false;
 let isStarted = false;
 
@@ -36,27 +36,6 @@ function changeWholeTime(seconds) {
   }
 }
 
-// for (var i = 0; i < setterBtns.length; i++) {
-//   setterBtns[i].addEventListener("click", function(event) {
-//     var param = this.dataset.setter;
-//     switch (param) {
-//       case "minutes-plus":
-//         changeWholeTime(1 * 60);
-//         break;
-//       case "minutes-minus":
-//         changeWholeTime(-1 * 60);
-//         break;
-//       case "seconds-plus":
-//         changeWholeTime(1);
-//         break;
-//       case "seconds-minus":
-//         changeWholeTime(-1);
-//         break;
-//     }
-//     displayTimeLeft(wholeTime);
-//   });
-// }
-
 function timer(seconds) {
   //counts time, takes seconds
   let remainTime = Date.now() + seconds * 1000;
@@ -66,6 +45,13 @@ function timer(seconds) {
     timeLeft = Math.round((remainTime - Date.now()) / 1000);
     if (timeLeft < 0) {
       clearInterval(intervalTimer);
+
+      // TODO: add notification code somewhere other than here
+      // var notification = webkitNotifications.createHTMLNotification(
+      //   "notification.html"
+      // );
+      // notification.show();
+
       isStarted = false;
       setterBtns.forEach(function(btn) {
         btn.disabled = false;

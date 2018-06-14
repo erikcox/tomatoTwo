@@ -91,11 +91,13 @@ body {
 #buttons {
   font-family: "Courier";
   position: relative;
-  left: 250px;
+  left: 220px;
   text-decoration: none;
 }
 
-#buttons>a {
+#buttons > a {
   text-decoration: none;
   color: #f7958e;
+  font-size: 16px;
+  font-weight: 900;
 }
